@@ -15,6 +15,11 @@ RUN npm install
 # Copia el resto del código de la aplicación
 COPY . .
 
+# Instalar dependencias y limpiar directorios temporales
+RUN npm install && \
+    npm cache clean --force && \
+    rm -rf /tmp/* /var/tmp/*
+
 # Expone el puerto en el que corre la aplicación
 EXPOSE 3000
 
