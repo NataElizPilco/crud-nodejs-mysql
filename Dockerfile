@@ -8,6 +8,7 @@ WORKDIR /myapp
 COPY package*.json .
 
 # Instala las dependencias
+RUN npm i express mysql2 dotenv
 RUN npm install
 #RUN npm run dev
 
